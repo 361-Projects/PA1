@@ -1,6 +1,10 @@
-//
-// adapted from http://www.cprogramming.com/snippets/source-code/singly-linked-list-insert-remove-add-count
-//
+/********************************************************
+ * PROGRAM: PA1 - Linked Lists                          *
+ * CLASS: CISC 361-011                                  *
+ * AUTHORS:                                             *
+ *    Alex Sederquest | alexsed@udel.edu | 702414270    *
+ *    Ben Segal | bensegal@udel.edu | 702425559         *
+ ********************************************************/
 
 #include "mp3.h"
 #define  BUFFERSIZE 128

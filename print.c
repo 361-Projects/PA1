@@ -1,3 +1,10 @@
+/********************************************************
+ * PROGRAM: PA1 - Linked Lists                          *
+ * CLASS: CISC 361-011                                  *
+ * AUTHORS:                                             *
+ *    Alex Sederquest | alexsed@udel.edu | 702414270    *
+ *    Ben Segal | bensegal@udel.edu | 702425559         *
+ ********************************************************/
 #include "mp3.h"
 
 extern node_t *head;
