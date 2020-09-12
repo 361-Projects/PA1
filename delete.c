@@ -20,6 +20,7 @@ void delete(char *name)
             } else if (curr == head) {
                 head = curr->next;
                 curr->next->prev = NULL;
+                curr = curr->next;
                 free(tmp->name);
                 free(tmp);
             } else if (curr->next == NULL) {
@@ -30,10 +31,10 @@ void delete(char *name)
             } else {
                 curr->prev->next = curr->next;
                 curr->next->prev = curr->prev;
+                curr = curr->next;
                 free(tmp->name);
                 free(tmp);
             }
         }
-        curr = curr->next;
     }
 }
