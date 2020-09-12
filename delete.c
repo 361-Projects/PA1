@@ -35,6 +35,8 @@ void delete(char *name)
                 free(tmp->name);
                 free(tmp);
             }
+        } else {
+            curr = curr->next;
         }
     }
 }
