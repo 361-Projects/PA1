@@ -11,6 +11,7 @@ void insert(char *name, int num)
   strcpy(mp3->name, name);                        // "assign" name via copy
   mp3->data = num;                                // assign data value
   mp3->next = NULL;
+  mp3->prev = NULL;
 
   if (head == NULL)
   {
@@ -22,5 +23,6 @@ void insert(char *name, int num)
     while (temp->next != NULL)
       temp = temp->next;
     temp->next = mp3;         // append to the tail/end
+    mp3->prev = temp;
   }
 }
