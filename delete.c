@@ -26,6 +26,7 @@ void delete(char *name)
                 curr->prev->next = NULL;
                 free(tmp->name);
                 free(tmp);
+                return;
             } else {
                 curr->prev->next = curr->next;
                 curr->next->prev = curr->prev;
