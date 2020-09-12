@@ -8,7 +8,8 @@
 node_t *head;
 
 void insert(char *name, int data);
-void print();
+void printFTB();
+void printBTF();
 void freeList();
 void delete(char *name);
 
@@ -65,9 +66,12 @@ int main()
         case 3: if (head == NULL)
                   printf("List is Empty\n");
                 else
-                  print();
+                  printFTB();
                 break;
-        case 4: printf("end to beginning\n");
+        case 4: if (head == NULL)
+                  printf("List is Empty\n");
+                else
+                  printBTF();
                 break;
         case 5: freeList();
                 return 0;

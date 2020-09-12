@@ -2,7 +2,7 @@
 
 extern node_t *head;
 
-void print()
+void printFTB()
 {
   node_t *temp;
   int  i = 0;
@@ -12,5 +12,26 @@ void print()
   while (temp != NULL) {
     printf("(%d)--%s--%d--\n", ++i, temp->name, temp->data);
     temp = temp->next;
+  }
+}
+
+void printBTF()
+{
+  node_t *tmp;
+  int i = 2;
+  tmp = head;
+
+  node_t *last = NULL;
+
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
+    i++;
+  }
+  //i++;
+  last = tmp;
+
+  while (tmp != NULL) {
+    printf("(%d)--%s--%d--\n", --i, tmp->name, tmp->data);
+    tmp = tmp->prev;
   }
 }
