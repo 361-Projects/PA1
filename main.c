@@ -10,6 +10,7 @@ node_t *head;
 void insert(char *name, int data);
 void print();
 void freeList();
+void delete(char *name);
 
 int main()
 {
@@ -23,9 +24,10 @@ int main()
     printf("\nList Operations\n");
     printf("===============\n");
     printf("(1) Insert\n");
-    printf("(2) Display\n");
-    printf("(3) Delete\n");
-    printf("(4) Exit\n");
+    printf("(2) Delete\n");
+    printf("(3) Display (beginning to end)\n");
+    printf("(4) Display (end to beginning)\n");
+    printf("(5) Exit\n");
     printf("Enter your choice : ");
     if (scanf("%d%c", &i, &c) <= 0) {          // use c to capture \n
         printf("Enter only an integer...\n");
@@ -34,7 +36,7 @@ int main()
         switch(i)
         {
         case 1: printf("Enter the name to insert : ");
-		if (fgets(buffer, BUFFERSIZE , stdin) != NULL) {
+		        if (fgets(buffer, BUFFERSIZE , stdin) != NULL) {
                   len = strlen(buffer);
                   buffer[len - 1] = '\0';   // override \n to become \0
                 } else {
@@ -46,14 +48,28 @@ int main()
                 printf("[%s] [%d]\n", buffer, num);
                 insert(buffer, num);
                 break;
-        case 2: if (head == NULL)
+        case 2: if (head == NULL){
+                  printf("List is Empty\n");
+                  break;
+                }
+                printf("Enter the name to be deleted : ");
+		        if (fgets(buffer, BUFFERSIZE , stdin) != NULL) {
+                  len = strlen(buffer);
+                  buffer[len - 1] = '\0';   // override \n to become \0
+                } else {
+                    printf("wrong name...");
+                    exit(-1);
+                  }
+                delete(buffer);
+                break;
+        case 3: if (head == NULL)
                   printf("List is Empty\n");
                 else
                   print();
                 break;
-        case 3: printf("delete function has not been implemented...\n");
+        case 4: printf("end to beginning\n");
                 break;
-        case 4: freeList();
+        case 5: freeList();
                 return 0;
         default: printf("Invalid option\n");
         }
