@@ -8,7 +8,7 @@ void delete(char *name)
     cur = head;
     tmp = NULL;
 
-    while (cur->next != NULL) {
+    while (cur != NULL) {
         if (strcmp(cur->name, name) == 0) {
             tmp = cur;
             cur->prev->next = cur->next;
