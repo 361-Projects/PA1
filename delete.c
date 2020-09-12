@@ -9,15 +9,15 @@ void delete(char *name)
     tmp = NULL;
 
     while (curr != NULL) {
+        tmp = curr;
         if (strcmp(curr->name, name) == 0) {
-            tmp = curr;
             // Deal with the 1st head case ;)
             if (curr == head && curr->next == NULL) {
                 free(tmp->name);
                 free(tmp);
                 head = NULL;
                 return;
-            } else if (curr == head && curr->next != NULL) {
+            } else if (curr == head) {
                 head = curr->next;
                 curr->next->prev = NULL;
                 free(tmp->name);
